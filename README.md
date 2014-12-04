@@ -1,6 +1,15 @@
 Itera Feedback
 =============
 
+## Installation
+
+It is assumed that the developer already has `npm` installed on their system.
+
+```
+$ npm install
+$ grunt bower:install
+```
+
 ## License
 
 Copyright (C) 2014 Jonas Amundsen, Trygve Aaberge
