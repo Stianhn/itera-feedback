@@ -31,8 +31,15 @@ module.exports = function(grunt) {
           }
         }
       }
+    },
+    eslint: {
+      target: [
+        "Gruntfile.js",
+        "client/assets/javascripts"
+      ]
     }
   });
 
   grunt.loadNpmTasks("grunt-bower-task");
+  grunt.loadNpmTasks("grunt-eslint");
 };
