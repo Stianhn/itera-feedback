@@ -72,7 +72,11 @@ of `master`.
 ## Reviewing pull requests
 
 Submitted pull requests should be reviewed and tested by others. Therefore, you
-should generally not merge your own pull requests.
+should generally not merge your own pull requests. An exception to this is when
+the pull request cannot be merged trivially and conflicts has to be resolved.
+Since these are usually best handled by the author of the pull request, it is
+acceptable to merge your own pull request when given the go-ahead from another
+developer.
 
 To review a pull request, you check out the branch and check that all the tests
 run, using `grunt eslint`. The code should be sufficiently tested in order to
