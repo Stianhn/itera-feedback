@@ -1,0 +1,13 @@
+{
+  "name": "itera-nurse",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Itera/itera-feedback.git"
+  },
+  "devDependencies": {
+    "bower": "1.3.12",
+    "grunt": "0.4.5",
+    "grunt-bower-task": "0.4.0"
+  }
+}

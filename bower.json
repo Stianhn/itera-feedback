@@ -1,0 +1,12 @@
+{
+  "name": "itera-nurse",
+  "dependencies": {
+    "normalize.css": "3.0.2"
+  },
+  "exportsOverride": {
+    "*": {
+      "js": "**/*.js",
+      "css": "**/*.css"
+    }
+  }
+}
