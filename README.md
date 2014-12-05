@@ -10,6 +10,10 @@ $ npm install
 $ grunt bower:install
 ```
 
+## Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
 Copyright (C) 2014 Jonas Amundsen, Trygve Aaberge
