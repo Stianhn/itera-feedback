@@ -1,5 +1,3 @@
-/* global module */
-
 /*
  * Copyright (C) 2014 Jonas Amundsen, Trygve Aaberge
  *
@@ -17,10 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* global module */
+
 module.exports = function(grunt) {
   "use strict";
-
-  var path = require('path');
 
   grunt.initConfig({
     bower: {
@@ -37,4 +35,4 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks("grunt-bower-task");
-}
+};
