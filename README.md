@@ -3,7 +3,8 @@ Itera Feedback
 
 ## Installation
 
-It is assumed that the developer already has `npm` installed on their system.
+It is assumed that the developer already has `npm` and `grunt-cli` installed on
+their system.
 
 ```
 $ npm install
