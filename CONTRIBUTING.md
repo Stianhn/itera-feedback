@@ -75,9 +75,9 @@ Submitted pull requests should be reviewed and tested by others. Therefore, you
 should generally not merge your own pull requests.
 
 To review a pull request, you check out the branch and check that all the tests
-run, `grunt eslint`. If the pull request changes behavior, you should also
-check manually that this works. You should also look at the code diff to check
-if the code looks okay, and includes all the tests it should.
+run, using `grunt eslint`. The code should be sufficiently tested in order to
+be accepted. Any major change in behavior should also be manually tested.
+Additionally, the code itself should obviously be reviewed.
 
 When finished, you should merge the pull request into master. If there are no
 conflicts, you may use the merge button in the pull request. Note however that
