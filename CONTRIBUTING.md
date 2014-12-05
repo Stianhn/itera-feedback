@@ -79,7 +79,7 @@ run, `grunt eslint`. If the pull request changes behavior, you should also
 check manually that this works. You should also look at the code diff to check
 if the code looks okay, and includes all the tests it should.
 
-When finished, you should merge the pull request into develop. If there are no
+When finished, you should merge the pull request into master. If there are no
 conflicts, you may use the merge button in the pull request. Note however that
 this will use your primary email address on Github, which may not be the one
 you want to use.
