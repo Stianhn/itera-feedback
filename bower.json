@@ -5,8 +5,8 @@
   },
   "exportsOverride": {
     "*": {
-      "js": "**/*.js",
-      "css": "**/*.css"
+      "javascripts": "**/*.js",
+      "stylesheets": "**/*.css"
     }
   }
 }
