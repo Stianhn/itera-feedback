@@ -22,4 +22,5 @@ app = Flask(__name__, static_folder='../../client', static_url_path='')
 
 db = Mongo()
 
+# flake8: noqa
 import feedback.routes

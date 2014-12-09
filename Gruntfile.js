@@ -37,9 +37,17 @@ module.exports = function(grunt) {
         "Gruntfile.js",
         "client/assets/javascripts"
       ]
+    },
+    flake8: {
+      src: [
+        "server/run.py",
+        "server/feedback",
+        "server/tests"
+      ]
     }
   });
 
   grunt.loadNpmTasks("grunt-bower-task");
   grunt.loadNpmTasks("grunt-eslint");
+  grunt.loadNpmTasks("grunt-flake8");
 };
