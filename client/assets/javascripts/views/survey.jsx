@@ -21,21 +21,21 @@ var Survey = React.createClass({
   },
 
   answers: function () {
-    return this.props.survey.questions.reduce(function (answers, question, i) {
+    return this.props.questions.reduce(function (answers, question, i) {
       answers[question.title] = this.refs["question" + i].answer();
       return answers;
     }.bind(this), {});
   },
 
   render: function () {
-    this.questionInstances = this.props.survey.questions.map(function (question, i) {
-      return <Question question={question} ref={"question" + i} key={i} />;
+    this.questionInstances = this.props.questions.map(function (question, i) {
+      return <Question {...question} ref={"question" + i} key={i} />;
     });
 
     return (
       <div>
-        <h1>{this.props.survey.title}</h1>
-        <p>{this.props.survey.description}</p>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.description}</p>
         {this.questionInstances}
         <button className="button red large" onClick={this.showAnswers}>
           Send svar

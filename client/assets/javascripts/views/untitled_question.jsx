@@ -19,8 +19,8 @@ var UntitledQuestion = React.createClass({
   render: function () {
     return (
       <div className="question-wrapper">
-        <If condition={this.props.question.description}>
-          <p>{this.props.question.description}</p>
+        <If condition={this.props.description}>
+          <p>{this.props.description}</p>
         </If>
         {this.props.children}
       </div>

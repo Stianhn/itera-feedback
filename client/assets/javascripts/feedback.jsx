@@ -37,6 +37,6 @@ var survey = {
 };
 
 React.render(
-  <Survey survey={survey} />,
+  <Survey {...survey} />,
   document.getElementById("content-wrapper")
 );

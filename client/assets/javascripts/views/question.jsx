@@ -15,8 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var questionType = function (question) {
-  switch (question.type) {
+var questionType = function (type) {
+  switch (type) {
     case 'dropdown':
       return Dropdown;
       break;
@@ -35,8 +35,8 @@ var Question = React.createClass({
   },
 
   render: function () {
-    var name = titleToName(this.props.question.title),
-        Type = questionType(this.props.question);
+    var name = titleToName(this.props.title),
+        Type = questionType(this.props.type);
 
     return <Type {...this.props} name={name} ref="question" />
   }

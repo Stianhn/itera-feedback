@@ -21,15 +21,15 @@ var Dropdown = React.createClass({
   },
 
   render: function () {
-    var name = this.props.question.name;
+    var name = this.props.name;
 
     return (
-      <UntitledQuestion question={this.props.question}>
+      <UntitledQuestion {...this.props}>
         <div className="question dropdown">
-          <label htmlFor={name}>{this.props.question.title}</label>
+          <label htmlFor={name}>{this.props.title}</label>
           <select name={name} id={name} ref="answer">
             <option />
-            {this.props.question.alternatives.map(function (alternative, i) {
+            {this.props.alternatives.map(function (alternative, i) {
               return <option key={i}>{alternative}</option>
             })}
           </select>

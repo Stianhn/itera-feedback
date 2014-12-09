@@ -21,13 +21,13 @@ var TextSmall = React.createClass({
   },
 
   render: function () {
-    var name = this.props.question.name;
+    var name = this.props.name;
 
     return (
-      <UntitledQuestion question={this.props.question}>
+      <UntitledQuestion {...this.props}>
         <div className="question text-small">
-          <label htmlFor={name}>{this.props.question.title}</label>
-          <input name={name} id={name} type="text" placeholder={this.props.question.placeholder} ref="answer" />
+          <label htmlFor={name}>{this.props.title}</label>
+          <input name={name} id={name} type="text" placeholder={this.props.placeholder} ref="answer" />
         </div>
       </UntitledQuestion>
     );

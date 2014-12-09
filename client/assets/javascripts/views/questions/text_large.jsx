@@ -22,9 +22,9 @@ var TextLarge = React.createClass({
 
   render: function () {
     return (
-      <TitledQuestion question={this.props.question}>
+      <TitledQuestion {...this.props}>
         <div className="question text-large">
-          <textarea name={this.props.question.name} placeholder={this.props.question.placeholder} ref="answer" />
+          <textarea name={this.props.name} placeholder={this.props.placeholder} ref="answer" />
         </div>
       </TitledQuestion>
     );
