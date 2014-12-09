@@ -15,7 +15,19 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+
 from feedback import app
 
 
-app.run(debug=True)
+if len(sys.argv) > 1 and sys.argv[1] == "dev":
+    try:
+        from livereload import Server
+        server = Server(app.wsgi_app)
+        server.watch('../client')
+        server.serve(restart_delay=None)
+    except ImportError:
+        app.run(debug=True)
+
+else:
+    app.run()
