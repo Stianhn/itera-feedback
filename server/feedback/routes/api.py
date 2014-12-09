@@ -13,28 +13,28 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from bson.objectid import ObjectId
+from flask import request
 
-from pymongo import MongoClient
+from feedback import app, db
 
 
-class Mongo(object):
+@app.route("/api/answer/<id>", methods=["GET"])
+def get_answer(id):
+    return str(db.get_answer(id))
 
-    def __init__(self):
-        self._client = MongoClient()
-        self._db = self._client.itera_feedback
 
-    def _collection_find(self, collection, id=None):
-        return collection.find_one({"_id": ObjectId(id)})
+@app.route("/api/form/<id>", methods=["GET"])
+def get_form(id):
+    return str(db.get_form(id))
 
-    def get_answer(self, id=None):
-        return self._collection_find(self._db.answer, id)
 
-    def get_form(self, id=None):
-        return self._collection_find(self._db.form, id)
+@app.route("/api/answer", methods=["POST"])
+def post_answer():
+    db.post_answer(request.get_json())
+    return ""
 
-    def post_answer(self, answer):
-        self._db.answer.insert(answer)
 
-    def post_form(self, form):
-        self._db.form.insert(form)
+@app.route("/api/form", methods=["POST"])
+def post_form():
+    db.post_form(request.get_json())
+    return ""
