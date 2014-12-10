@@ -17,26 +17,37 @@
 
 var Survey = React.createClass({
   showAnswers: function () {
-    console.log(this.answers());
+    console.log(this.state.answers);
   },
 
-  answers: function () {
-    return this.props.questions.reduce(function (answers, question, i) {
-      answers[question.title] = this.refs["question" + i].answer();
-      return answers;
-    }.bind(this), {});
+  getInitialState: function () {
+    return {
+      answers: {}
+    };
+  },
+
+  handleAnswerUpdate: function (title, value) {
+    var answer = {};
+    answer[title] = value;
+
+    var updatedAnswers = React.addons.update(
+      this.state.answers, {$merge: answer});
+
+    this.setState({answers: updatedAnswers});
   },
 
   render: function () {
-    this.questionInstances = this.props.questions.map(function (question, i) {
-      return <Question {...question} ref={"question" + i} key={i} />;
-    });
+    var title = this.props.title,
+        description = this.props.description,
+        questionInstances = this.props.questions.map(function (question, i) {
+      return <Question {...question} value={this.state.answers[question.title]} onChange={this.handleAnswerUpdate.bind(this, question.title)} />;
+    }.bind(this));
 
     return (
-      <div>
-        <h1>{this.props.title}</h1>
-        <p>{this.props.description}</p>
-        {this.questionInstances}
+      <div className="survey">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {questionInstances}
         <button className="button red large" onClick={this.showAnswers}>
           Send svar
         </button>

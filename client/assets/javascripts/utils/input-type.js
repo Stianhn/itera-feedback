@@ -15,18 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var TextLarge = React.createClass({
-  answer: function (event) {
-    return this.refs.answer.getDOMNode().value.trim();
-  },
-
-  render: function () {
-    return (
-      <TitledQuestion {...this.props}>
-        <div className="question text-large">
-          <textarea name={this.props.name} placeholder={this.props.placeholder} ref="answer" />
-        </div>
-      </TitledQuestion>
-    );
+var inputType = function (type) {
+  switch (type) {
+    case 'dropdown':
+      return Dropdown;
+    case 'text-large':
+      return TextLarge;
+    case 'text-small':
+      return TextSmall;
   }
-});
+}
