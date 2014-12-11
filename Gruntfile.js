@@ -44,10 +44,40 @@ module.exports = function(grunt) {
         "server/feedback",
         "server/tests"
       ]
+    },
+    shell: {
+      run: {
+        command: "./venv/bin/python run.py dev",
+        options: {
+          execOptions: {
+            cwd: "server"
+          }
+        }
+      },
+      venv: {
+        command: "virtualenv venv && ./venv/bin/pip install -r requirements.txt",
+        options: {
+          execOptions: {
+            cwd: "server"
+          }
+        }
+      },
+      livereload: {
+        command: "./venv/bin/pip install livereload",
+        options: {
+          execOptions: {
+            cwd: "server"
+          }
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks("grunt-bower-task");
   grunt.loadNpmTasks("grunt-eslint");
   grunt.loadNpmTasks("grunt-flake8");
+  grunt.loadNpmTasks("grunt-shell");
+
+  grunt.registerTask("install", ["bower:install", "shell:venv"]);
+  grunt.registerTask("run", ["shell:run"]);
 };
