@@ -25,7 +25,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "dev":
         from livereload import Server
         server = Server(app.wsgi_app)
         server.watch('../client')
-        server.serve(restart_delay=None)
+        server.serve(port=5000, restart_delay=None)
     except ImportError:
         app.run(debug=True)
 
