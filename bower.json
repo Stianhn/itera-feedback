@@ -1,7 +1,8 @@
 {
   "name": "itera-nurse",
   "dependencies": {
-    "normalize.css": "3.0.2"
+    "normalize.css": "3.0.2",
+    "react": "0.12.1"
   },
   "exportsOverride": {
     "*": {
