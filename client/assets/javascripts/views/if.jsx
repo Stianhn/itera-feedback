@@ -18,9 +18,7 @@
 var If = React.createClass({
   render: function () {
     if (this.props.condition) {
-      return (
-        <div>{this.props.children}</div>
-      );
+      return <div>{this.props.children}</div>;
     } else {
       return false;
     }

@@ -15,26 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var Dropdown = React.createClass({
-  answer: function (event) {
-    return this.refs.answer.getDOMNode().value.trim();
-  },
-
-  render: function () {
-    var name = this.props.name;
-
-    return (
-      <UntitledQuestion {...this.props}>
-        <div className="question dropdown">
-          <label htmlFor={name}>{this.props.title}</label>
-          <select name={name} id={name} ref="answer">
-            <option />
-            {this.props.alternatives.map(function (alternative, i) {
-              return <option key={i}>{alternative}</option>
-            })}
-          </select>
-        </div>
-      </UntitledQuestion>
-    );
+var inputFormType = function (type) {
+  switch (type) {
+    case 'dropdown':
+      return DropdownForm;
+    case 'text-large':
+      return TextForm;
+    case 'text-small':
+      return TextForm;
   }
-});
+}

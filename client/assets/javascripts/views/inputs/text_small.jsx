@@ -15,15 +15,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var TitledQuestion = React.createClass({
+var TextSmall = React.createClass({
+  getDefaultProps: function () {
+    return {
+      onChange: function () {}
+    };
+  },
+
+  handleChange: function (event) {
+    this.props.onChange(event.target.value);
+  },
+
   render: function () {
+    var name = this.props.name,
+        title = this.props.title,
+        description = this.props.description,
+        placeholder = this.props.placeholder,
+        defaultValue = this.props.defaultValue;
+
+    if (title && !name) {
+      name = titleToName(title);
+    }
+
     return (
-      <div className="question-wrapper">
-        <h2>{this.props.title}</h2>
-        <If condition={this.props.description}>
-          <p>{this.props.description}</p>
+      <div>
+        <If condition={description}>
+          <p>{description}</p>
         </If>
-        {this.props.children}
+        <p className="question text-small">
+          <label htmlFor={name}>{title}</label>
+          <input name={name} id={name} type="text" placeholder={placeholder} defaultValue={defaultValue} onChange={this.handleChange} />
+        </p>
       </div>
     );
   }

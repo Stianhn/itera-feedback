@@ -15,29 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var questionType = function (type) {
-  switch (type) {
-    case 'dropdown':
-      return Dropdown;
-      break;
-    case 'text-large':
-      return TextLarge;
-      break;
-    case 'text-small':
-      return TextSmall;
-      break;
-  }
-}
-
 var Question = React.createClass({
-  answer: function () {
-    return this.refs.question.answer();
-  },
-
   render: function () {
-    var name = titleToName(this.props.title),
-        Type = questionType(this.props.type);
+    var Type = inputType(this.props.type);
 
-    return <Type {...this.props} name={name} ref="question" />
+    return (
+      <div className="question-wrapper">
+        <Type {...this.props} />
+      </div>
+    );
   }
 });

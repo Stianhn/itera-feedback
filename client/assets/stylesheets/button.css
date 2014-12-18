@@ -18,6 +18,7 @@
 .button {
   border: 2px solid;
   padding: 0.5em;
+  margin-right: 1em;
   border-radius: 4px;
   border-color: hsl(360, 0%, 80%);
   background-color: hsl(360, 0%, 100%);
@@ -37,6 +38,21 @@
 .button.red:hover {
   border-color: hsl(358, 95%, 18%);
   background-color: hsl(358, 91%, 38%);
+}
+
+.button.blue {
+  color: white;
+  border-color: hsl(194, 76%, 41%);
+  background-color: hsl(194, 76%, 61%);
+}
+
+.button.blue:hover {
+  border-color: hsl(194, 76%, 36%);
+  background-color: hsl(194, 76%, 56%);
+}
+
+.button.small {
+  padding: 0.25em;
 }
 
 .button.large {

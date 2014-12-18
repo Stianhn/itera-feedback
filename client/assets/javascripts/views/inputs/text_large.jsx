@@ -15,14 +15,37 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-var UntitledQuestion = React.createClass({
+var TextLarge = React.createClass({
+  getDefaultProps: function () {
+    return {
+      onChange: function () {}
+    };
+  },
+
+  handleChange: function (event) {
+    this.props.onChange(event.target.value);
+  },
+
   render: function () {
+    var name = this.props.name,
+        title = this.props.title,
+        description = this.props.description,
+        placeholder = this.props.placeholder,
+        defaultValue = this.props.defaultValue;
+
+    if (title && !name) {
+      name = titleToName(title);
+    }
+
     return (
-      <div className="question-wrapper">
-        <If condition={this.props.description}>
-          <p>{this.props.description}</p>
+      <div>
+        <h2>{title}</h2>
+        <If condition={description}>
+          <p>{description}</p>
         </If>
-        {this.props.children}
+        <p className="question text-large">
+          <textarea name={name} placeholder={placeholder} defaultValue={defaultValue} onChange={this.handleChange} />
+        </p>
       </div>
     );
   }
